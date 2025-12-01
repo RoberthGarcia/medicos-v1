@@ -327,3 +327,98 @@ footer {
     margin-top: var(--espaciado-xl);
     text-align: center;
 }
+
+/* ============================================
+   ALERTAS Y MENSAJES
+   ============================================ */
+.alert {
+    padding: 15px 20px;
+    border-radius: var(--radio-md);
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+.alert-warning {
+    background-color: #fff3cd;
+    border-color: #ffeaa7;
+    color: #856404;
+}
+
+.alert-info {
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+    color: #0c5460;
+}
+
+/* Animación para ocultar alertas */
+.alert-auto-hide {
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* ============================================
+   BOTONES MEJORADOS
+   ============================================ */
+.btn-sm {
+    padding: 5px 10px;
+    font-size: 0.875rem;
+}
+
+.btn-warning {
+    background-color: var(--color-advertencia);
+    color: #fff;
+}
+
+.btn-warning:hover {
+    background-color: #e08e00;
+    color: #fff;
+}
+
+.btn-danger {
+    background-color: var(--color-error);
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background-color: #dc2626;
+    color: #fff;
+}
+
+/* Iconos en botones */
+.btn i {
+    margin-right: 5px;
+}
+
+/* ============================================
+   TABLA RESPONSIVA MEJORADA
+   ============================================ */
+.table td form {
+    margin: 0;
+}
+
+.table td .btn {
+    margin: 2px;
+}
+
+/* Para móviles: stack los botones verticalmente */
+@media (max-width: 768px) {
+    .table td .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}

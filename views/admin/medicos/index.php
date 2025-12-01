@@ -2,6 +2,7 @@
     <div class="row" style="margin-top: 30px; display: flex; justify-content: space-between; align-items: center;">
         <div class="col">
             <h1>Gestionar Médicos</h1>
+            <?php include_once __DIR__ . '/../../inc/alertas.php'; ?>
         </div>
         <div class="col">
             <a href="<?php echo URL_ROOT; ?>/admin/medicos/crear" class="btn btn-secondary">
@@ -49,14 +50,32 @@
                             </td>
                             <td>
                                 <a href="<?php echo URL_ROOT; ?>/admin/medicos/editar/<?php echo $medico->id_medico; ?>"
-                                    class="btn btn-primary btn-sm">Editar</a>
+                                    class="btn btn-primary btn-sm" title="Editar médico">
+                                    <i class="fa fa-edit"></i> Editar
+                                </a>
 
+                                <!-- Botón Toggle (Activar/Desactivar) -->
                                 <form action="<?php echo URL_ROOT; ?>/admin/medicos/toggle" method="POST"
                                     style="display: inline;">
                                     <input type="hidden" name="id_medico" value="<?php echo $medico->id_medico; ?>">
                                     <button type="submit"
-                                        class="btn <?php echo $medico->activo ? 'btn-danger' : 'btn-success'; ?> btn-sm">
+                                        class="btn <?php echo $medico->activo ? 'btn-warning' : 'btn-success'; ?> btn-sm btn-toggle-medico"
+                                        data-nombre="<?php echo $medico->nombre . ' ' . $medico->apellido; ?>"
+                                        data-accion="<?php echo $medico->activo ? 'desactivar' : 'activar'; ?>"
+                                        title="<?php echo $medico->activo ? 'Desactivar' : 'Activar'; ?> médico">
+                                        <i class="fa fa-<?php echo $medico->activo ? 'eye-slash' : 'eye'; ?>"></i>
                                         <?php echo $medico->activo ? 'Desactivar' : 'Activar'; ?>
+                                    </button>
+                                </form>
+
+                                <!-- Botón Eliminar -->
+                                <form action="<?php echo URL_ROOT; ?>/admin/medicos/eliminar" method="POST"
+                                    style="display: inline;">
+                                    <input type="hidden" name="id_medico" value="<?php echo $medico->id_medico; ?>">
+                                    <button type="submit" class="btn btn-danger btn-sm btn-delete-medico"
+                                        data-nombre="<?php echo $medico->nombre . ' ' . $medico->apellido; ?>"
+                                        title="Eliminar médico">
+                                        <i class="fa fa-trash"></i> Eliminar
                                     </button>
                                 </form>
                             </td>
@@ -67,3 +86,4 @@
         </div>
     </div>
 </div>
+<script src="<?php echo URL_ROOT; ?>/js/admin.js"></script>

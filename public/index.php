@@ -38,7 +38,7 @@ $router->post('/admin/medicos/crear', [MedicosController::class, 'crear']);
 $router->get('/admin/medicos/editar/{id}', [MedicosController::class, 'editar']);
 $router->post('/admin/medicos/editar/{id}', [MedicosController::class, 'editar']);
 $router->post('/admin/medicos/eliminar', [MedicosController::class, 'eliminar']);
-$router->post('/admin/medicos/toggle', [MedicosController::class, 'toggle']);
+$router->post('/admin/medicos/toggle', [MedicosController::class, 'toggleActivo']);
 
 // --- MEDICO PANEL ---
 $router->get('/medicos/login', [PanelMedicoController::class, 'login']);

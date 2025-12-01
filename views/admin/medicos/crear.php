@@ -18,7 +18,7 @@
                     <?php endforeach; ?>
                 <?php endif; ?>
 
-                <form action="<?php echo URL_ROOT; ?>/admin/medicos/crear" method="POST" enctype="multipart/form-data">
+                <form action="/admin/medicos/crear" method="POST" enctype="multipart/form-data">
                     <div class="grid-3">
                         <!-- Datos Personales -->
                         <div class="form-group">

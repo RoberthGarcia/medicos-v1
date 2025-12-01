@@ -115,6 +115,11 @@ class ActiveRecord
         $query = "INSERT INTO " . static::$tabla . " ($columnas) VALUES ($valores_str)";
 
         $resultado = self::$db->query($query);
+
+        if ($resultado) {
+            $this->{static::$primaryKey} = self::$db->insert_id;
+        }
+
         return $resultado;
     }
 
@@ -131,7 +136,11 @@ class ActiveRecord
         }
         $query = "UPDATE " . static::$tabla . " SET ";
         $query .= join(', ', $valores);
-        $query .= " WHERE " . static::$primaryKey . " = '" . self::$db->escape_string($this->{static::$primaryKey}) . "' ";
+
+        $id = $this->{static::$primaryKey};
+        $idSanitizado = $id !== null ? self::$db->escape_string($id) : 'NULL';
+
+        $query .= " WHERE " . static::$primaryKey . " = '" . $idSanitizado . "' ";
         $query .= " LIMIT 1 ";
         $resultado = self::$db->query($query);
         return $resultado;
@@ -139,7 +148,10 @@ class ActiveRecord
 
     public function eliminar()
     {
-        $query = "DELETE FROM " . static::$tabla . " WHERE " . static::$primaryKey . " = " . self::$db->escape_string($this->{static::$primaryKey}) . " LIMIT 1";
+        $id = $this->{static::$primaryKey};
+        $idSanitizado = $id !== null ? self::$db->escape_string($id) : 'NULL';
+
+        $query = "DELETE FROM " . static::$tabla . " WHERE " . static::$primaryKey . " = " . $idSanitizado . " LIMIT 1";
         $resultado = self::$db->query($query);
         return $resultado;
     }
