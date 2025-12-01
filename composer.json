@@ -1,0 +1,17 @@
+{
+    "name": "medicos/oaxaca",
+    "description": "Directorio Médico de Oaxaca",
+    "config": {
+        "disable-tls": true,
+        "secure-http": false
+    },
+    "autoload": {
+        "psr-4": {
+            "Model\\": "./models",
+            "Controller\\": "./controllers",
+            "Classes\\": "./classes",
+            "MVC\\": "./"
+        }
+    },
+    "require": {}
+}

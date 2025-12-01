@@ -1,0 +1,41 @@
+# Dependencias de Composer
+vendor/
+composer.lock
+
+# Archivos de configuración sensibles
+.env
+config/database.php
+
+# Archivos de base de datos
+database
+*.sql
+*.sqlite
+*.db
+
+# Archivos de logs y caché
+logs/
+cache/
+tmp/
+
+# Archivos subidos por usuarios (dentro de public)
+public/uploads/
+public/images/uploads/
+public/files/
+
+# Archivos de IDE y editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos de backup
+*.bak
+*.backup
+*.old
+*.tmp

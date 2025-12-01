@@ -1,0 +1,329 @@
+:root {
+    /* Colores principales */
+    --color-primario: #0066CC;
+    --color-primario-hover: #0052A3;
+    --color-primario-light: #E6F2FF;
+
+    --color-secundario: #00A86B;
+    --color-secundario-hover: #008556;
+    --color-secundario-light: #E6F7F0;
+
+    /* Colores de estado */
+    --color-exito: #10B981;
+    --color-advertencia: #F59E0B;
+    --color-error: #EF4444;
+    --color-info: #3B82F6;
+
+    /* Fondos */
+    --color-fondo: #F8FAFC;
+    --color-fondo-claro: #FFFFFF;
+    --color-fondo-oscuro: #1E293B;
+
+    /* Texto */
+    --color-texto: #1E293B;
+    --color-texto-claro: #64748B;
+    --color-texto-muy-claro: #94A3B8;
+
+    /* Bordes */
+    --color-borde: #E2E8F0;
+
+    /* Sombras */
+    --sombra-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --sombra-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --sombra-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+    /* Espaciado */
+    --espaciado-xs: 0.5rem;
+    --espaciado-sm: 1rem;
+    --espaciado-md: 1.5rem;
+    --espaciado-lg: 2rem;
+    --espaciado-xl: 3rem;
+
+    /* Tipografía */
+    --fuente-principal: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+    /* Transiciones */
+    --transicion-rapida: 150ms ease-in-out;
+    --transicion-normal: 300ms ease-in-out;
+
+    /* Border radius */
+    --radio-sm: 0.375rem;
+    --radio-md: 0.5rem;
+    --radio-lg: 0.75rem;
+    --radio-xl: 1rem;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--fuente-principal);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-primario);
+    transition: var(--transicion-rapida);
+}
+
+a:hover {
+    color: var(--color-primario-hover);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Utilities */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--espaciado-md);
+}
+
+.btn {
+    display: inline-block;
+    padding: var(--espaciado-xs) var(--espaciado-md);
+    border-radius: var(--radio-md);
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    transition: var(--transicion-rapida);
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--color-primario);
+    color: var(--color-fondo-claro);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primario-hover);
+}
+
+.btn-secondary {
+    background-color: var(--color-secundario);
+    color: var(--color-fondo-claro);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-secundario-hover);
+}
+
+.btn-whatsapp {
+    background-color: #25D366 !important;
+    color: #fff !important;
+}
+
+.btn-whatsapp:hover {
+    background-color: #128C7E !important;
+    color: #fff !important;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-1 {
+    margin-top: var(--espaciado-sm);
+}
+
+.mt-2 {
+    margin-top: var(--espaciado-md);
+}
+
+.mt-3 {
+    margin-top: var(--espaciado-lg);
+}
+
+/* Cards */
+.card {
+    background-color: var(--color-fondo-claro);
+    border-radius: var(--radio-lg);
+    box-shadow: var(--sombra-md);
+    padding: var(--espaciado-md);
+    transition: var(--transicion-normal);
+    border: 1px solid var(--color-borde);
+}
+
+.card:hover {
+    box-shadow: var(--sombra-lg);
+    transform: translateY(-2px);
+}
+
+/* Forms */
+.form-group {
+    margin-bottom: var(--espaciado-md);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--espaciado-xs);
+    color: var(--color-texto);
+    font-weight: 500;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-md);
+    font-family: inherit;
+    transition: var(--transicion-rapida);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--color-primario);
+    box-shadow: 0 0 0 3px var(--color-primario-light);
+}
+
+.invalid-feedback {
+    color: var(--color-error);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: block;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--color-fondo-claro);
+    box-shadow: var(--sombra-sm);
+    padding: var(--espaciado-sm) 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primario);
+}
+
+.navbar ul {
+    display: flex;
+    gap: var(--espaciado-md);
+}
+
+.navbar ul li a {
+    color: var(--color-texto);
+    font-weight: 500;
+}
+
+.navbar ul li a:hover {
+    color: var(--color-primario);
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(135deg, var(--color-primario), var(--color-primario-hover));
+    color: var(--color-fondo-claro);
+    padding: var(--espaciado-xl) 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: var(--espaciado-sm);
+}
+
+.hero p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    margin-bottom: var(--espaciado-lg);
+}
+
+/* Grid */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--espaciado-md);
+}
+
+/* Tables */
+.table-responsive {
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: var(--espaciado-md);
+}
+
+.table th,
+.table td {
+    padding: var(--espaciado-sm);
+    text-align: left;
+    border-bottom: 1px solid var(--color-borde);
+}
+
+.table th {
+    background-color: var(--color-fondo);
+    font-weight: 600;
+    color: var(--color-texto-claro);
+}
+
+.table tr:hover {
+    background-color: var(--color-fondo);
+}
+
+/* Badges */
+.badge {
+    display: inline-block;
+    padding: 0.25em 0.6em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: var(--radio-sm);
+}
+
+.badge-premium {
+    background-color: var(--color-advertencia);
+    color: #fff;
+}
+
+.badge-success {
+    background-color: var(--color-exito);
+    color: #fff;
+}
+
+.badge-danger {
+    background-color: var(--color-error);
+    color: #fff;
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-fondo-oscuro);
+    color: var(--color-fondo-claro);
+    padding: var(--espaciado-lg) 0;
+    margin-top: var(--espaciado-xl);
+    text-align: center;
+}
